@@ -49,12 +49,14 @@ Download model: mistral 7B v0.2  (From Hugging Face)
 Save model in the models folder. 
 
 Once all files in the folder/file structure above. 
+
 Run once:
-python scripts/ingest_guidelines.py
+    python scripts/ingest_guidelines.py
+
 This creates guideline vector indexes 
 
 Now run the UI:
-python ui/physician_assistant_ui.py 
+    python ui/physician_assistant_ui.py 
  
 
 A desktop EMR assistant window opens.
