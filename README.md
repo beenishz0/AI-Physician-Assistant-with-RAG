@@ -11,6 +11,39 @@ Leveraging a retrieval-augmented generation (RAG) framework, the AI retrieves re
     ├── vectordb/           # FAISS vector index
     ├── scripts/            # Data loaders, RAG, LLM interface
     └── ui/                 # PyQt6 GUI
+# The system uses: 
+
+    Local LLM (GGUF via llama.cpp bindings) 
+    RAG retrieval 
+    Simulated EMR (FHIR-like JSON) 
+    Desktop UI popup using PyQt6 
+    Vector search with FAISS 
+Everything runs offline on Linux (Ubuntu) with CPU only. 
+
+# How to execute
+Install dependencies: 
+    sudo apt update 
+    sudo apt upgrade -y 
+    sudo apt install -y \ 
+    python3 \ 
+    python3-venv \ 
+    python3-pip \ 
+    build-essential \ 
+    git \ 
+    wget 
+
+Create virtual env: 
+    python3 -m venv venv 
+    source venv/bin/activate 
+    pip install --upgrade pip 
+    pip install llama-cpp-python==0.2.24 
+    pip install sentence-transformers 
+    pip install faiss-cpu 
+    pip install numpy 
+    pip install torch --index-url https://download.pytorch.org/whl/cpu 
+
+Download model: mistral 7B v0.2  (From Hugging Face)
+
 
 # Example Output – Patient “Buzz Lightyear”
 Patient Summary:
