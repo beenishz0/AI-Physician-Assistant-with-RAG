@@ -1,0 +1,23 @@
+TITLE: Acute Otitis Media
+
+Symptoms:
+- Ear pain
+- Fever
+- Irritability
+- Hearing loss
+
+Exam:
+- Bulging tympanic membrane
+- Decreased mobility
+- Middle ear effusion
+
+Treatment:
+Adults:
+Amoxicillin 875 mg BID
+
+Penicillin allergy:
+Azithromycin
+
+Follow-up:
+Reassess if no improvement in 48–72 hours
+

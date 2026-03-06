@@ -1,0 +1,7 @@
+Blood Panel Results
+
+WBC: 13.2 (High)
+CRP: 18 mg/L (High)
+Hemoglobin: 13.5
+Platelets: 240
+

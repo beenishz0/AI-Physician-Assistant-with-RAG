@@ -1,0 +1,16 @@
+{
+  "patient_id": "PT1023",
+  "name": "John Carter",
+  "age": 67,
+  "sex": "Male",
+  "conditions": [
+    "Type 2 Diabetes",
+    "Hypertension"
+  ],
+  "medications": [
+    "Metformin 500mg",
+    "Lisinopril 10mg"
+  ],
+  "visit_reason": "Fatigue and increased thirst"
+}
+

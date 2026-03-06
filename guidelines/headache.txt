@@ -1,0 +1,35 @@
+TITLE: Evaluation of Acute Headache
+[American Headache Society ]
+Key Red Flags (SNOOP):
+- Systemic symptoms (fever, cancer, immunocompromise)
+- Neurologic deficit
+- Onset sudden (thunderclap)
+- Older age (>50)
+- Pattern change or progressive headache
+
+Common Causes:
+1. Tension headache
+2. Migraine
+3. Sinus headache
+4. Medication overuse headache
+
+Evaluation:
+- Full neurologic exam
+- Fundoscopy
+- BP measurement
+- Consider CT head if red flags present
+
+Initial Management:
+Tension headache:
+- Acetaminophen
+- NSAIDs
+
+Migraine:
+- NSAIDs
+- Triptans
+- Antiemetics
+
+Red Flag Management:
+Immediate CT head
+Neurology consult
+

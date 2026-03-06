@@ -1,0 +1,14 @@
+{
+  "patient_id": "PT2044",
+  "name": "Maria Lopez",
+  "age": 54,
+  "sex": "Female",
+  "conditions": [
+    "Hyperlipidemia"
+  ],
+  "medications": [
+    "Atorvastatin 20mg"
+  ],
+  "visit_reason": "Chest discomfort and shortness of breath"
+}
+

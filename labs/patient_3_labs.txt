@@ -1,0 +1,25 @@
+Blood Panel
+
+Cholesterol: 204 (Normal)
+HDL: 79
+LDL: 109
+Triglycerides: 79 (Normal)
+TSH: 4.63
+HbA1c: 5.0
+WBC: 4.6
+RBC: 4.99
+Hemoglobin: 14.3
+Hematocrit: 43.7
+MCV: 87.6
+MCH: 28.7
+Sodium: 14.0
+Potassium: 4.5
+Chloride: 103
+CO2: 28
+Glucose Random: 80
+Creatinine: 0.83
+Total Bili: 0.2
+Total Protein: 7.3
+SGPT: 24
+Calcium: 9.4
+

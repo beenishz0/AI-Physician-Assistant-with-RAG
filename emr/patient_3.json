@@ -1,0 +1,27 @@
+{
+  "patient_id": "PT2026",
+  "name": "Buzz Lightyear",
+  "age": 38,
+  "sex": "Female",
+  "conditions": [
+    "None"
+  ],
+  "medications": [
+    "Vitamins"
+  ],
+  "visit_reason": "Severe headache on left side near temporal region",
+ 
+  "visit_history": [
+    {
+      "date": "2019-01-28",
+      "chief_complaint": "Severe one sided headache",
+      "physician_notes": "Patient reports right after a flu started having severe headache on left side of the head.Occurs randomly throughout the day, with many episodes each lasting 2-3 minutes.Level 9 pain. No vision changes, no family history of migrane.Advised likely cluster headaches, recommended pure oxygen which helped and use of rizatriptan."
+    },
+    {
+      "date": "2023-05-20",
+      "chief_complaint": "Headache",
+      "physician_notes": "Severe one sided headaches on left side. Previous CT was normal. Recommended continue using pure oxygen and rizatriptan as it helped. Ordered labs and MRI."
+    }
+  ]
+}
+
