@@ -35,14 +35,30 @@ Install dependencies:
 Create virtual env: 
     python3 -m venv venv 
     source venv/bin/activate 
+    
     pip install --upgrade pip 
     pip install llama-cpp-python==0.2.24 
     pip install sentence-transformers 
     pip install faiss-cpu 
     pip install numpy 
-    pip install torch --index-url https://download.pytorch.org/whl/cpu 
+    pip install torch --index-url https://download.pytorch.org/whl/cpu
+    pip install 
+    pip install PyQt6 
 
 Download model: mistral 7B v0.2  (From Hugging Face)
+Save model in the models folder. 
+
+Once all files in the folder/file structure above. 
+Run once:
+python scripts/ingest_guidelines.py
+This creates guideline vector indexes 
+
+Now run the UI:
+python ui/physician_assistant_ui.py 
+ 
+
+A desktop EMR assistant window opens.
+From drop down menu you can click the patient and then click Generate Recommendations. 
 
 
 # Example Output – Patient “Buzz Lightyear”
