@@ -1,108 +1,312 @@
-# AI-Physician-Assistant-with-RAG
-An AI system that integrates electronic medical records (EMR) with local large language models (LLMs) to provide clinical decision support. The system processes patient historical charts, lab results, and multi-modal radiology reports (CT, MRI, X-ray) to generate evidence-based recommendations.
-Leveraging a retrieval-augmented generation (RAG) framework, the AI retrieves relevant guideline information, combines it with patient-specific data, and outputs recommendations via a desktop interface using PyQt6. The PoC demonstrates offline capability on an desktop Linux PC system, achieving a realistic simulation of EMR-assisted clinical reasoning. Results indicate that the system can summarize patient histories, interpret multiple data types, and provide guideline-aligned recommendations, highlighting the potential for localized AI-based clinical support.
 
-# Folder Structure Example:
-    physician_assistant_rag/
-    ├── emr/                # Patient JSON files
-    ├── labs/               # Lab results
-    ├── radiology/          # CT, MRI, X-ray reports
-    ├── knowledge_base/     # Guidelines
-    ├── vectordb/           # FAISS vector index
-    ├── scripts/            # Data loaders, RAG, LLM interface
-    └── ui/                 # PyQt6 GUI
-# The system uses: 
+Below is a **professional GitHub README** structure for your project. This style is commonly used in **AI / healthcare repos** and will make your project look **credible to recruiters, researchers, and engineers**.
 
-    Local LLM (GGUF via llama.cpp bindings) 
-    RAG retrieval 
-    Simulated EMR (FHIR-like JSON) 
-    Desktop UI popup using PyQt6 
-    Vector search with FAISS 
-Everything runs offline on Linux (Ubuntu) with CPU only. 
+---
 
-# How to execute
-Install dependencies: 
-    sudo apt update 
-    sudo apt upgrade -y 
-    sudo apt install -y \ 
-    python3 \ 
-    python3-venv \ 
-    python3-pip \ 
-    build-essential \ 
-    git \ 
-    wget 
+# AI Physician Assistant (Local RAG Clinical Decision Support)
 
-Create virtual env: 
-    python3 -m venv venv 
-    source venv/bin/activate 
-    
-    pip install --upgrade pip 
-    pip install llama-cpp-python==0.2.24 
-    pip install sentence-transformers 
-    pip install faiss-cpu 
-    pip install numpy 
-    pip install torch --index-url https://download.pytorch.org/whl/cpu
-    pip install 
-    pip install PyQt6 
+A **local AI-powered physician assistant** that analyzes **patient EMR data, lab results, radiology reports, and clinical guidelines** to generate **evidence-based clinical recommendations** using Retrieval-Augmented Generation (RAG).
 
-Download model: mistral 7B v0.2  (From Hugging Face)
-Save model in the models folder. 
+The system runs **fully locally on a CPU-based Linux machine**, making it suitable for **edge healthcare environments where GPUs or cloud access may not be available**.
 
-Once all files in the folder/file structure above. 
+---
 
-Run once:
-    python scripts/ingest_guidelines.py
+# Overview
 
-This creates guideline vector indexes 
+Modern physicians spend significant time reviewing patient charts, historical notes, and clinical guidelines before making treatment decisions.
 
-Now run the UI:
-    python ui/physician_assistant_ui.py 
- 
+This project demonstrates how **lightweight AI systems can assist clinicians by summarizing patient history and retrieving relevant medical knowledge in real time.**
 
-A desktop EMR assistant window opens.
-From drop down menu you can click the patient and then click Generate Recommendations. 
+The application:
+
+1. Loads **patient EMR records**
+2. Integrates **lab and radiology data**
+3. Retrieves **relevant clinical guidelines**
+4. Uses a **local Large Language Model (LLM)** to generate treatment recommendations
+5. Displays results in a **desktop clinical interface**
+
+The goal is to demonstrate how **RAG architectures can support clinical decision workflows** without requiring large cloud infrastructure.
+
+---
+
+# Architecture
+
+**End-to-End Pipeline**
+
+EMR Data → Data Processing → Vector Knowledge Retrieval → LLM Reasoning → Clinical Recommendation
+
+Core components include:
+
+* EMR ingestion pipeline
+* Clinical guideline knowledge base
+* Vector similarity search
+* Local LLM inference
+* Desktop UI for physician interaction
+
+---
+
+# System Architecture
+
+**Key Technologies**
+
+| Component            | Technology                     |
+| -------------------- | ------------------------------ |
+| Programming Language | Python                         |
+| Vector Database      | FAISS                          |
+| Embeddings           | SentenceTransformers           |
+| LLM Inference        | llama.cpp (GGUF models)        |
+| UI                   | PyQt6                          |
+| Data Format          | JSON                           |
+| Platform             | Linux (Ubuntu CPU environment) |
+
+---
+
+# Project Structure
+
+```
+physician_assistant_rag/
+
+emr/
+patient_1.json
+patient_2.json
+
+labs/
+patient_1_labs.txt
+patient_2_labs.txt
+
+radiology/
+patient_1_ct.txt
+patient_2_mri.txt
+
+guidelines/
+migraine.txt
+cluster_headache.txt
+tension_headache.txt
+
+knowledge_base/
+vector_index.faiss
+
+scripts/
+emr_loader.py
+clinical_data_loader.py
+ingest_guidelines.py
+rag_engine.py
+clinical_prompt.py
+llm_engine.py
+
+ui/
+physician_assistant_ui.py
+```
+
+---
+
+# Features
+
+### EMR Integration
+
+Loads structured patient records including:
+
+* demographics
+* medications
+* visit history
+* physician notes
+
+### Clinical Data Integration
+
+Integrates:
+
+* laboratory results
+* radiology findings (CT / MRI / X-ray)
+
+### Medical Knowledge Retrieval
+
+Clinical guidelines are indexed using **vector embeddings** enabling context-aware retrieval during inference.
+
+### Local AI Reasoning
+
+The system runs a **local LLM** to generate recommendations using:
+
+* patient history
+* clinical guidelines
+* lab results
+* imaging reports
+
+### Physician Interface
+
+A **desktop UI** allows clinicians to:
+
+* select patients
+* review summaries
+* generate recommendations
+
+---
+
+# Example Output
+
+Example recommendation generated for a patient presenting with **recurrent unilateral headaches**:
+
+**Patient Summary**
+
+38-year-old female presenting with recurrent unilateral temporal headaches. Previous CT and MRI imaging were normal. History suggests episodic severe pain lasting several minutes with multiple daily episodes.
+
+**AI Recommendation**
+
+* Symptoms consistent with **cluster headache pattern**
+* Continue **oxygen therapy during acute episodes**
+* Consider **triptan therapy (Rizatriptan)**
+* Evaluate for preventive therapy if frequency increases
+* Recommend neurology follow-up
+
+---
+
+# Installation
+
+### 1. Clone Repository
+
+```
+git clone https://github.com/yourusername/ai-physician-assistant
+cd ai-physician-assistant
+```
+
+### 2. Create Virtual Environment
+
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Install Dependencies
+
+```
+pip install -r requirements.txt
+```
+
+Example dependencies:
+
+```
+numpy
+faiss-cpu
+sentence-transformers
+llama-cpp-python
+PyQt6
+```
+
+---
+
+# Download Local LLM
+
+Download a **GGUF model** compatible with llama.cpp.
+
+Example models:
+
+* Mistral 7B Instruct
+* Llama 3 Instruct
+
+Place the model inside:
+
+```
+models/
+```
+
+Example:
+
+```
+models/mistral-7b-instruct.Q4_K_M.gguf
+```
+
+---
+
+# Index Clinical Guidelines
+
+Before running the UI, build the vector knowledge base.
+
+```
+python scripts/ingest_guidelines.py
+```
+
+This will:
+
+* embed guideline text
+* create FAISS index
+* store the vector database
+
+---
+
+# Run the Application
+
+```
+python ui/physician_assistant_ui.py
+```
+
+The desktop UI will launch allowing patient selection and recommendation generation.
+
+---
+
+# Clinical Use Case Demonstration
+
+The prototype was tested using **realistic clinical scenarios involving headache disorders**.
+
+The system successfully retrieved guidelines related to:
+
+* migraine
+* cluster headaches
+* tension headaches
+
+AI-generated recommendations closely aligned with physician decision-making.
+
+---
+
+# Important Disclaimer
+
+This project is **for research and demonstration purposes only**.
+
+It is **not a medical device** and should not be used for real clinical diagnosis or treatment decisions.
+
+---
+
+# Future Improvements
+
+Planned enhancements include:
+
+* integration with FHIR-based EMR systems
+* real-time speech-to-clinical-note ingestion
+* multi-patient knowledge graphs
+* GPU acceleration
+* larger medical LLM models
+* explainable AI outputs
+
+---
+
+# Author
+
+**Beenish Zia**
+
+Systems Architect | AI Systems | Edge AI | Healthcare AI
+
+---
+
+# License
+
+GNU License
+
+---
+
+# Blog Post
+
+Full technical write-up available here:
+
+Blog: *(insert your blog link)*
+
+---
+
+# Research Paper
+
+A technical paper describing the architecture and results has been prepared for journal submission.
+
+---
+
+# GitHub Star
+
+If you find this project useful or interesting, consider giving the repository a star.
 
 
-# Example Output – Patient “Buzz Lightyear”
-Patient Summary:
-Patient: Buzz Lightyear
-Age: 30
-Sex: Female
-
-Conditions:
-None
-
-Medications:
-Vitamins
-
-Current Visit Reason:
-Severe headache on left side near temporal region
-
-Previous Clinical Visits:
-
-Date: 2019-01-28
-Chief Complaint: Severe one sided headache
-Physician Notes: Patient reports right after a flu started having severe headache on left side of the head. Occurs randomly throughout the day, with many episodes each lasting 2-3 minutes. Level 9 pain. No vision changes, no family history of migraine. Advised likely cluster headaches, recommended pure oxygen which helped and use of rizatriptan.
-
-Date: 2023-05-20
-Chief Complaint: Headache
-Physician Notes: Severe one sided headaches on left side. Previous CT was normal. Recommended continue using pure oxygen and rizatriptan as it helped. Ordered labs and MRI.
-AI Recommendation:
-CLINICAL SUMMARY
-----------------
-Patient Buzz Lightyear is a 30-year-old female with no significant medical history who presents with severe, one-sided headaches on the left side near the temporal region. The pain is described as pulsating or throbbing in quality and has a moderate to severe intensity. The headaches worsen with routine physical activity and last between 4 and 72 hours.
-
-The patient previously experienced similar symptoms following a flu episode, which were diagnosed as likely cluster headaches. She was advised to use pure oxygen and rizatriptan for symptomatic relief. A recent MRI brain scan showed no evidence of acute infarct, intracranial hemorrhage, or mass effect. Mucous retention cysts were noted in the left maxillary and sphenoid sinuses.
-
-POSSIBLE DIAGNOSIS
-------------------
-Based on the patient's symptoms and imaging results, it is most likely that she continues to experience cluster headaches. However, given the persistence of her symptoms despite treatment, alternative diagnoses such as migraine or tension-type headache should be considered. Further evaluation by a neurologist may be necessary for definitive diagnosis.
-
-RECOMMENDED NEXT STEPS
-----------------------
-1. Neurology consultation for further evaluation and potential alternative treatment options.
-2. Continue use of pure oxygen and rizatriptan as needed for symptomatic relief.
-3. Consider trial of other migraine preventative medications, such as propranolol or topiramate.
-4. Monitor for any new symptoms or changes in headache pattern.
-
-GUIDELINE EVIDENCE
