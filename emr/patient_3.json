@@ -1,7 +1,7 @@
 {
   "patient_id": "PT2026",
   "name": "Buzz Lightyear",
-  "age": 38,
+  "age": 30,
   "sex": "Female",
   "conditions": [
     "None"
