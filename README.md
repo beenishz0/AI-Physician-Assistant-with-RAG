@@ -147,7 +147,7 @@ Example recommendation generated for a patient presenting with **recurrent unila
 
 **Patient Summary**
 
-38-year-old female presenting with recurrent unilateral temporal headaches. Previous CT and MRI imaging were normal. History suggests episodic severe pain lasting several minutes with multiple daily episodes.
+30-year-old female presenting with recurrent unilateral temporal headaches. Previous CT and MRI imaging were normal. History suggests episodic severe pain lasting several minutes with multiple daily episodes.
 
 **AI Recommendation**
 
