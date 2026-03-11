@@ -1,7 +1,4 @@
 
-Below is a **professional GitHub README** structure for your project. This style is commonly used in **AI / healthcare repos** and will make your project look **credible to recruiters, researchers, and engineers**.
-
----
 
 # AI Physician Assistant (Local RAG Clinical Decision Support)
 
